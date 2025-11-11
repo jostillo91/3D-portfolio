@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { getImagePath } from '@/lib/utils'
 
 export default function About() {
   const ref = useRef(null)
@@ -38,7 +39,7 @@ export default function About() {
           >
             <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-primary/20">
               <img
-                src="/profile.jpg"
+                src={getImagePath('/profile.jpg')}
                 alt="Joshua Castillo"
                 className="w-full h-full object-cover"
               />

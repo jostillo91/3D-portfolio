@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { getImagePath } from '@/lib/utils'
 
 export default function Projects() {
   const ref = useRef(null)
@@ -74,7 +75,7 @@ export default function Projects() {
             >
               <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-dark-light/30">
                 <img
-                  src={project.image}
+                  src={getImagePath(project.image)}
                   alt={project.title}
                   className="w-full h-full object-cover"
                   onError={(e) => {
