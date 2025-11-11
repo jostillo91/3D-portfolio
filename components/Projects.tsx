@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
-import Image from 'next/image'
 
 export default function Projects() {
   const ref = useRef(null)
@@ -73,13 +72,15 @@ export default function Projects() {
               className="bg-dark-light/50 backdrop-blur-sm rounded-2xl p-6 border border-primary/20 hover:border-primary/50 transition-all group overflow-hidden"
               whileHover={{ y: -10, scale: 1.02 }}
             >
-              <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
-                <Image
+              <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-dark-light/30">
+                <img
                   src={project.image}
                   alt={project.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback if image fails to load
+                    console.error('Image failed to load:', project.image)
+                  }}
                 />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-primary">

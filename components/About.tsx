@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Image from 'next/image'
 
 export default function About() {
   const ref = useRef(null)
@@ -38,12 +37,10 @@ export default function About() {
             className="order-2 md:order-1"
           >
             <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-primary/20">
-              <Image
+              <img
                 src="/profile.jpg"
                 alt="Joshua Castillo"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-full object-cover"
               />
             </div>
           </motion.div>
