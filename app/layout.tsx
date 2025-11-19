@@ -4,6 +4,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Joshua Castillo - Front-End Developer',
   description: 'Front-end developer specializing in React, modern web applications, and clean UX. Portfolio of projects, case studies, and contact info.',
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({
@@ -17,4 +20,3 @@ export default function RootLayout({
     </html>
   )
 }
-
